@@ -800,9 +800,9 @@ AFRAME.registerComponent('barchart3d', {
         var dataKeys = getKeys(_data);
         //storing keys
         this._datakeys = dataKeys;
-        BAR_WIDTH = componentData.width / dataKeys.keysOne.length;
-        BAR_DEPTH = componentData.depth / dataKeys.keysTwo.length;
-        MAX_HEIGHT = componentData.height;
+        let BAR_WIDTH = componentData.width / dataKeys.keysOne.length;
+        let BAR_DEPTH = componentData.depth / dataKeys.keysTwo.length;
+        let MAX_HEIGHT = componentData.height;
 
         var MAX_VALUE = Math.max.apply(null, _data.map(function (d) { return d.value }));
         this.max_value = MAX_VALUE;
@@ -968,7 +968,7 @@ AFRAME.registerComponent('barchart3d', {
             var txt = value;
             var curveSeg = 3;
             var texto = document.createElement("a-entity");
-            TEXT_WIDTH = 6;
+            let TEXT_WIDTH = 6;
             //FIXME: depende del tama�o de letra...
             var xPos = -0.7;
             //var yPos = BasicChart._coords.y + step +  0.36778332145402703 / 2;
@@ -1005,7 +1005,7 @@ AFRAME.registerComponent('barchart3d', {
         var getZLabel = function (component, step, labelkv) {
             var curveSeg = 3;
             var texto = document.createElement("a-entity");
-            TEXT_WIDTH = 6;
+            let TEXT_WIDTH = 6;
             //FIXME: depende del tama�o de letra...
             var xPos = -1 * ((TEXT_WIDTH / 2) + 0.7);
             var zPos = -step;
@@ -1125,10 +1125,10 @@ AFRAME.registerComponent('barchart', {
             return a.value;
         });;
         dataValues = scale.apply(null, dataValues);
-        BAR_WIDTH = componentData.width / dataValues.length;;
-        BAR_DEPTH = componentData.depth;
-        MAX_HEIGHT = componentData.height;
-        COLORS = ['#2338D9', '#23A2D9', '#23D978', '#BAD923', '#D923D3'];
+        let BAR_WIDTH = componentData.width / dataValues.length;;
+        let BAR_DEPTH = componentData.depth;
+        let MAX_HEIGHT = componentData.height;
+        let COLORS = ['#2338D9', '#23A2D9', '#23D978', '#BAD923', '#D923D3'];
         var entityEl = document.createElement('a-entity');
         var yMaxPoint = 0;
 
@@ -1242,7 +1242,7 @@ AFRAME.registerComponent('barchart', {
             var txt = value;
             var curveSeg = 3;
             var texto = document.createElement("a-entity");
-            TEXT_WIDTH = 6;
+            let TEXT_WIDTH = 6;
             //FIXME: depende del tamaño de letra...
             var xPos = -0.7;
             //var yPos = BasicChart._coords.y + step +  0.36778332145402703 / 2;
@@ -1878,7 +1878,7 @@ AFRAME.registerComponent('bubblechart', {
           var txt = value;
           var curveSeg = 3;
           var texto = document.createElement("a-entity");
-          TEXT_WIDTH = 6;
+          let TEXT_WIDTH = 6;
           //FIXME: depende del tama�o de letra...
           var xPos = -0.7;
           //var yPos = BasicChart._coords.y + step +  0.36778332145402703 / 2;
@@ -1915,7 +1915,7 @@ AFRAME.registerComponent('bubblechart', {
       var getZLabel = function (component, step, labelkv) {
           var curveSeg = 3;
           var texto = document.createElement("a-entity");
-          TEXT_WIDTH = 6;
+          let TEXT_WIDTH = 6;
           //FIXME: depende del tama�o de letra...
           var xPos = -1 * ((TEXT_WIDTH / 2) + 0.7);
           var zPos = -step;
@@ -2465,7 +2465,7 @@ AFRAME.registerComponent('smoothcurvechart', {
       }
       var dataValues = _data.map(function (a) { return a.value; });;
 
-      COLORS = ['#2338D9', '#23A2D9', '#23D978', '#BAD923', '#D923D3'];
+      let COLORS = ['#2338D9', '#23A2D9', '#23D978', '#BAD923', '#D923D3'];
       var yMaxPoint = 0;
       dataValues = scale.apply(null, dataValues);
 
@@ -2546,7 +2546,7 @@ AFRAME.registerComponent('smoothcurvechart', {
           var txt = value;
           var curveSeg = 3;
           var texto = document.createElement("a-entity");
-          TEXT_WIDTH = 6;
+          let TEXT_WIDTH = 6;
           //FIXME: depende del tama�o de letra...
           var xPos = -0.7;
           //var yPos = BasicChart._coords.y + step +  0.36778332145402703 / 2;
@@ -3012,7 +3012,7 @@ function aframedc() {
         var element = document.createElement('a-entity');
         element.setAttribute(compName, {});
         var obubbleChart = element;
-        obarChart = extendDeep(obubbleChart, baseMixin);
+        let obarChart = extendDeep(obubbleChart, baseMixin);
         //unique properties and methods
         obubbleChart.componentName = compName;
         obubbleChart.width = function (newradius) {
